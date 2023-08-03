@@ -3,11 +3,8 @@
 import { ThemeContext } from "@/app/context/ThemeContext"
 import { useContext } from "react"
 
-// import { useTheme } from "next-themes"
-
 export function ModeToggle() {
     const { currentTheme, toggleTheme } = useContext(ThemeContext)
-
 
   return (
     <button

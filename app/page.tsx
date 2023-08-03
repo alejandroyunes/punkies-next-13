@@ -1,5 +1,5 @@
-import ThemeSwitch from "@/src/components/themeSwitch";
-import logo from '../public/next.svg'
+import { ModeToggle } from "@/components/modeToggle";
+import ThemeSwitch from "@/components/themeSwitch";
 
 export default function Home() {
   return (
@@ -7,32 +7,13 @@ export default function Home() {
 
 <div className='font-sans flex flex-col justify-center items-center h-screen dark:bg-zinc-700 dark:text-white'>
   <h1 className='text-2xl'>Hello World!</h1>
-  <h2>React + TailwindCSS Dark Mode App</h2>
+  <h2>React + TailwindCSS Dark Mode Apfsp</h2>
   <div className='mt-2'>
     <ThemeSwitch />
+    <ModeToggle />
   </div>
 </div>
 
-  <figure className="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
-  <img className ="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src="/assets/sarah-dayan.jpg" alt="" width="384" height="512" />
-  <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
-    <blockquote>
-      <p className="text-lg font-medium">
-        “Tailwind CSS is the only framework that I've seen scale
-        on large teams. It’s easy to customize, adapts to any design,
-        and the build size is tiny.”
-      </p>
-    </blockquote>
-    <figcaption className="font-medium">
-      <div className="text-sky-500 dark:text-sky-400">
-        Sarah Dayan
-      </div>
-      <div className="text-slate-700 dark:text-slate-500">
-        Staff Engineer, Algolia
-      </div>
-    </figcaption>
-  </div>
-</figure>
   </>
   )
 }

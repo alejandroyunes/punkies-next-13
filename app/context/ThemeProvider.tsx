@@ -3,10 +3,11 @@
 import React, {  useState, useEffect, FC, ReactNode  } from 'react'
 import { ThemeContext } from './ThemeContext'
  
-
 const ThemeContextWrapper: FC<{ children: ReactNode }> = ({ children }) => {
 
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+  const localTheme = typeof window !== 'undefined' ? window.localStorage.getItem('theme') : null;
+
+  const [theme, setTheme] = useState(localTheme || 'light')
 
   const toggleTheme = (newTheme: 'light' | 'dark') => {
     setTheme(newTheme)
@@ -14,15 +15,14 @@ const ThemeContextWrapper: FC<{ children: ReactNode }> = ({ children }) => {
   }
 
   useEffect(() => {
-    if (theme === 'light') document.body.classList.remove('dark')
-    else document.body.classList.add('dark')
+    if (theme === 'light'){
+      document.body.classList.remove('dark')
+    } else {
+      document.body.classList.add('dark')
+    }
   }, [theme])
 
-  return (
-    <ThemeContext.Provider value={{ currentTheme: theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={{ currentTheme: theme, toggleTheme }}>{children}</ThemeContext.Provider>
 }
 
 export default ThemeContextWrapper

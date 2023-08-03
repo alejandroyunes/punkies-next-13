@@ -9,7 +9,7 @@ type ContextType = {
 
 const defaultValue = {
     currentTheme: 'light',
-    toggleTheme: () => { },
+    toggleTheme: () => {},
 }
 
 export const ThemeContext = createContext<ContextType>(defaultValue)
